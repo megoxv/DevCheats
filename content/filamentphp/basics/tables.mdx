@@ -1,0 +1,21 @@
+---
+title: Tables in FilamentPHP 3
+description: Learn how to create and customize tables in FilamentPHP 3.
+tags:
+  - tables
+  - columns
+  - filamentphp
+---
+
+# Tables in FilamentPHP 3
+
+Tables are used to display and manage records in FilamentPHP.
+
+## Table Columns
+
+FilamentPHP provides a wide range of table columns.
+
+```php
+Tables\Columns\TextColumn::make('title')->sortable()->searchable(),
+Tables\Columns\BooleanColumn::make('is_published'),
+Tables\Columns\ImageColumn::make('image'),

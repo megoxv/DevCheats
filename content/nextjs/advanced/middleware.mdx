@@ -1,0 +1,26 @@
+---
+title: Middleware in Next.js
+description: Learn how to use middleware in Next.js for advanced routing and logic.
+tags:
+  - middleware
+  - routing
+  - nextjs
+---
+
+# Middleware
+
+Middleware allows you to run code before a request is completed.
+
+## Example
+
+```jsx
+// middleware.js
+import { NextResponse } from 'next/server';
+
+export function middleware(req) {
+  if (req.nextUrl.pathname === '/about') {
+    return NextResponse.redirect('/');
+  }
+
+  return NextResponse.next();
+}

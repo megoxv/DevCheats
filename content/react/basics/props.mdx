@@ -1,0 +1,22 @@
+---
+title: Props in React
+description: Understand how to pass and use props in React components.
+tags:
+  - props
+  - data-flow
+---
+
+# Props in React
+
+Props (short for "properties") are used to pass data from a parent component to a child component.
+
+## Passing Props
+
+```jsx
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+function App() {
+  return <Welcome name="Alice" />;
+}

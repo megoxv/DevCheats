@@ -1,0 +1,27 @@
+---
+title: Layouts in Next.js
+description: Learn how to create reusable layouts in Next.js.
+tags:
+  - layout
+  - components
+  - nextjs
+---
+
+# Layouts in Next.js
+
+Layouts allow you to create reusable structures for your pages.
+
+## Basic Layout
+
+Example:
+```jsx
+// components/Layout.js
+export default function Layout({ children }) {
+  return (
+    <div>
+      <header>My Header</header>
+      <main>{children}</main>
+      <footer>My Footer</footer>
+    </div>
+  );
+}

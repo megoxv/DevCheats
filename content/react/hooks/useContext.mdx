@@ -1,0 +1,40 @@
+---
+title: useContext Hook
+description: Learn how to consume context in functional components using the useContext hook.
+tags:
+  - hooks
+  - context
+  - state-management
+---
+
+# useContext Hook
+
+The `useContext` hook allows you to consume context in functional components.
+
+## Basic Usage
+
+```jsx
+import React, { createContext, useContext } from 'react';
+
+const ThemeContext = createContext('light');
+
+function App() {
+  return (
+    <ThemeContext.Provider value="dark">
+      <Toolbar />
+    </ThemeContext.Provider>
+  );
+}
+
+function Toolbar() {
+  return (
+    <div>
+      <ThemedButton />
+    </div>
+  );
+}
+
+function ThemedButton() {
+  const theme = useContext(ThemeContext);
+  return <button style={{ background: theme === 'dark' ? '#333' : '#CCC' }}>Themed Button</button>;
+}

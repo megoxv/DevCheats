@@ -1,0 +1,37 @@
+---
+title: getServerSideProps
+description: Learn how to fetch data on each request using getServerSideProps.
+tags:
+  - data-fetching
+  - server-side-rendering
+  - nextjs
+---
+
+# getServerSideProps
+
+`getServerSideProps` fetches data on each request.
+
+## Basic Usage
+
+```jsx
+// pages/index.js
+export default function Home({ posts }) {
+  return (
+    <ul>
+      {posts.map((post) => (
+        <li key={post.id}>{post.title}</li>
+      ))}
+    </ul>
+  );
+}
+
+export async function getServerSideProps() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const posts = await res.json();
+
+  return {
+    props: {
+      posts,
+    },
+  };
+}

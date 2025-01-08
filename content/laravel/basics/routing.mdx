@@ -1,0 +1,24 @@
+---
+title: Routing in Laravel 11
+description: Learn how to define and manage routes in Laravel 11.
+tags:
+  - routing
+  - web
+  - api
+---
+
+# Routing in Laravel 11
+
+Laravel provides a powerful routing system for defining web and API routes.
+
+## Basic Routes
+
+Define routes in `routes/web.php` or `routes/api.php`.
+
+```php
+// routes/web.php
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return 'Welcome to Laravel 11!';
+});

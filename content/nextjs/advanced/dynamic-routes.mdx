@@ -1,0 +1,25 @@
+---
+title: Dynamic Routes
+description: Learn how to create dynamic routes in Next.js.
+tags:
+  - routing
+  - dynamic
+  - nextjs
+---
+
+# Dynamic Routes
+
+Dynamic routes allow you to create pages with dynamic parameters.
+
+## Example
+
+```jsx
+// pages/blog/[slug].js
+import { useRouter } from 'next/router';
+
+export default function BlogPost() {
+  const router = useRouter();
+  const { slug } = router.query;
+
+  return <h1>Blog Post: {slug}</h1>;
+}

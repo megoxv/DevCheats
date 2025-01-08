@@ -1,0 +1,37 @@
+---
+title: getStaticProps
+description: Learn how to fetch data at build time using getStaticProps.
+tags:
+  - data-fetching
+  - static-generation
+  - nextjs
+---
+
+# getStaticProps
+
+`getStaticProps` fetches data at build time and generates static HTML.
+
+## Basic Usage
+
+```jsx
+// pages/index.js
+export default function Home({ posts }) {
+  return (
+    <ul>
+      {posts.map((post) => (
+        <li key={post.id}>{post.title}</li>
+      ))}
+    </ul>
+  );
+}
+
+export async function getStaticProps() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const posts = await res.json();
+
+  return {
+    props: {
+      posts,
+    },
+  };
+}

@@ -1,0 +1,20 @@
+---
+title: API Routes
+description: Learn how to create API routes in Next.js.
+tags:
+  - api
+  - serverless
+  - nextjs
+---
+
+# API Routes
+
+API routes allow you to create serverless functions in Next.js.
+
+## Basic Usage
+
+```jsx
+// pages/api/hello.js
+export default function handler(req, res) {
+  res.status(200).json({ message: 'Hello, world!' });
+}

@@ -1,0 +1,25 @@
+---
+title: Routing in Next.js
+description: Learn how routing works in Next.js, including file-based routing and dynamic routes.
+tags:
+  - routing
+  - pages
+  - nextjs
+---
+
+# Routing in Next.js
+
+Next.js uses a **file-based routing system**. Every file in the `pages` directory becomes a route.
+
+## Basic Routing
+
+- `pages/index.js` → `/`
+- `pages/about.js` → `/about`
+- `pages/blog/index.js` → `/blog`
+
+Example:
+```jsx
+// pages/about.js
+export default function About() {
+  return <h1>About Page</h1>;
+}

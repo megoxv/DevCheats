@@ -1,0 +1,33 @@
+---
+title: State in React
+description: Learn how to manage component state in React.
+tags:
+  - state
+  - hooks
+  - useState
+---
+
+# State in React
+
+State is used to manage data that changes over time in a component.
+
+## State in Class Components
+
+```jsx
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+
+  render() {
+    return (
+      <div>
+        <p>Count: {this.state.count}</p>
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+          Increment
+        </button>
+      </div>
+    );
+  }
+}

@@ -1,0 +1,31 @@
+---
+title: Higher-Order Components (HOCs)
+description: Learn how to use higher-order components to reuse component logic.
+tags:
+  - hoc
+  - patterns
+  - advanced
+---
+
+# Higher-Order Components (HOCs)
+
+A higher-order component is a function that takes a component and returns a new component.
+
+## Example
+
+```jsx
+function withLoading(Component) {
+  return function WithLoadingComponent({ isLoading, ...props }) {
+    if (isLoading) {
+      return <p>Loading...</p>;
+    }
+    return <Component {...props} />;
+  };
+}
+
+const MyComponent = ({ data }) => <div>{data}</div>;
+const MyComponentWithLoading = withLoading(MyComponent);
+
+function App() {
+  return <MyComponentWithLoading isLoading={true} data="Hello, World!" />;
+}

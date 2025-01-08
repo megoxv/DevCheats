@@ -1,0 +1,47 @@
+---
+title: getStaticPaths
+description: Learn how to generate static paths for dynamic routes using getStaticPaths.
+tags:
+  - data-fetching
+  - static-generation
+  - nextjs
+---
+
+# getStaticPaths
+
+`getStaticPaths` generates static paths for dynamic routes.
+
+## Basic Usage
+
+```jsx
+// pages/blog/[slug].js
+export default function BlogPost({ post }) {
+  return (
+    <div>
+      <h1>{post.title}</h1>
+      <p>{post.body}</p>
+    </div>
+  );
+}
+
+export async function getStaticPaths() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const posts = await res.json();
+
+  const paths = posts.map((post) => ({
+    params: { slug: post.id.toString() },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.slug}`);
+  const post = await res.json();
+
+  return {
+    props: {
+      post,
+    },
+  };
+}

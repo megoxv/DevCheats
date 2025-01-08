@@ -1,0 +1,18 @@
+---
+title: Middleware in Laravel 11
+description: Learn how to create and use middleware in Laravel 11.
+tags:
+  - middleware
+  - http
+---
+
+# Middleware in Laravel 11
+
+Middleware allows you to filter HTTP requests entering your application.
+
+## Creating Middleware
+
+Use the `php artisan make:middleware` command.
+
+```bash
+php artisan make:middleware EnsureTokenIsValid

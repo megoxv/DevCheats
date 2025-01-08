@@ -1,0 +1,24 @@
+---
+title: Notifications in FilamentPHP 3
+description: Learn how to send notifications in FilamentPHP 3.
+tags:
+  - notifications
+  - alerts
+  - filamentphp
+---
+
+# Notifications in FilamentPHP 3
+
+Notifications are used to provide feedback to users.
+
+## Sending a Notification
+
+Use the `Notification` class to send notifications.
+
+```php
+use Filament\Notifications\Notification;
+
+Notification::make()
+    ->title('Saved successfully')
+    ->success()
+    ->send();

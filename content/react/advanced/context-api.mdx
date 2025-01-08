@@ -1,0 +1,27 @@
+---
+title: Context API
+description: Learn how to use the Context API for state management across the component tree.
+tags:
+  - context
+  - state-management
+  - advanced
+---
+
+# Context API
+
+The Context API provides a way to share data across the component tree without passing props manually.
+
+## Creating a Context
+
+```jsx
+import React, { createContext, useContext } from 'react';
+
+const ThemeContext = createContext('light');
+
+function App() {
+  return (
+    <ThemeContext.Provider value="dark">
+      <Toolbar />
+    </ThemeContext.Provider>
+  );
+}

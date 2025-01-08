@@ -1,0 +1,23 @@
+---
+title: Forms in FilamentPHP 3
+description: Learn how to create and customize forms in FilamentPHP 3.
+tags:
+  - forms
+  - validation
+  - filamentphp
+---
+
+# Forms in FilamentPHP 3
+
+Forms are used to create and edit records in FilamentPHP.
+
+## Form Components
+
+FilamentPHP provides a wide range of form components.
+
+```php
+Forms\Components\TextInput::make('title')->required(),
+Forms\Components\Textarea::make('content')->required(),
+Forms\Components\Select::make('category_id')
+    ->relationship('category', 'name'),
+Forms\Components\FileUpload::make('image'),
