@@ -7,7 +7,10 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "DevCheats",
-  description: "Your go-to resource for programming cheat sheets",
+  description: "Helpful cheatsheets for popular programming languages, frameworks, and development tools, with everything you need to know!",
+  verification: {
+    google: '_IqktHo6oIo2-k8jc95j-_drdPO8K-MK4KHTP4U9VnE'
+  }
 }
 
 export default function RootLayout({
